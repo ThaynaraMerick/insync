@@ -1,0 +1,303 @@
+
+:root {
+  --tardis-blue: #003a61;
+  --tardis-light: #52e3ff;
+  --galactic-gold: #ffc400;
+  --space-dark: #000a1f;
+}
+
+@font-face {
+  font-family: 'KoreanClassic';
+  
+  src: url('/fonts/korean-classic.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+.interior-scene-container {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.console-background {
+    width: 90%;
+    max-width: 1000px;
+    padding: 70px 2rem 2rem 2rem; 
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    box-shadow: 0 0 50px rgba(82, 227, 255, 0.5); 
+    text-align: center;
+    
+    position: relative; 
+    z-index: 1; 
+    
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+}
+
+.interior-title {
+    color: var(--tardis-light);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2; 
+    font-size: clamp(2rem, 5vw, 3rem); 
+}
+
+
+
+.content-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 3rem;
+
+   
+    background-image: url('../assets/photos/tardis-interior.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: inset 0 0 30px rgba(82, 227, 255, 0.3), 0 0 20px rgba(82, 227, 255, 0.5); 
+    position: relative; 
+}
+
+
+.content-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 10px;
+    z-index: 0; 
+}
+
+
+.photo-strip {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 5px solid white;
+    padding: 10px;
+    background-color: #ffc0cb; 
+    border-radius: 15px;
+    position: relative;
+    max-width: 200px; 
+    z-index: 1; 
+}
+
+.purikura-frame {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--tardis-blue);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    filter: sepia(0.2) saturate(1.5) contrast(1.1); 
+    cursor: pointer;
+    will-change: transform;
+}
+
+.purikura-sticker {
+    font-family: 'Arial', sans-serif; 
+    color: #ff00ff; 
+    background-color: #fff0f0;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid #ff00ff;
+    font-weight: bold;
+    margin-top: 10px;
+    transform: rotate(-3deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.korean-letter-hologram {
+    
+    background-color: rgba(30, 20, 10, 0.7); 
+    border: 1px solid #7a6e54; 
+    padding: 20px;
+    border-radius: 10px;
+    
+    
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    flex-grow: 1;
+    max-width: 450px; 
+    z-index: 1; 
+    
+    position: relative;
+    height: 450px; 
+    overflow: hidden; 
+}
+
+.page-title {
+    display: none; 
+}
+
+
+.korean-text {
+    
+    color: #e6c34f; 
+    
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(230, 195, 79, 0.2); 
+    
+    padding: 0 10px; 
+    
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    font-weight: normal; 
+    
+    font-style: normal; 
+    white-space: pre-line;
+    font-family: 'KoreanClassic', serif; 
+    
+    margin: 0; 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    position: relative; 
+    z-index: 1;
+}
+
+
+
+.back-button {
+    position: absolute;
+    top: 25px; 
+    left: 20px;
+    
+    padding: 8px 15px;
+    background-color: var(--tardis-blue);
+    color: white;
+    border: 1px solid var(--galactic-gold);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    z-index: 10; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    background-color: #004d80;
+    box-shadow: 0 0 10px var(--galactic-gold);
+}
+
+.music-toggle-button {
+    padding: 10px 20px;
+    margin-bottom: 20px; 
+    background-color: rgba(0, 58, 97, 0.8); 
+    color: white;
+    border: 2px solid var(--tardis-light);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px rgba(82, 227, 255, 0.5);
+}
+
+.music-toggle-button:hover {
+    background-color: var(--tardis-blue);
+    box-shadow: 0 0 10px var(--tardis-light);
+}
+
+
+.letter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 15px; 
+    margin-bottom: 10px;
+    position: relative; 
+    z-index: 2;
+}
+
+.nav-button {
+    padding: 8px 12px;
+    background-color: var(--tardis-blue);
+    color: white;
+    border: 1px solid var(--tardis-light);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    color: var(--galactic-gold);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.translation-button {
+    padding: 10px 20px;
+    margin-top: 5px; 
+    background-color: #281c0c; 
+    color: #e6c34f; 
+    border: 2px solid #7a6e54; 
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; 
+    z-index: 2;
+}
+
+.time-counter-display { 
+    position: relative;
+    z-index: 2; 
+    margin-top: 2rem; 
+    margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .content-area {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .korean-letter-hologram {
+        max-width: 100%; 
+        height: 380px; 
+    }
+    .photo-strip {
+        margin-bottom: 2rem; 
+    }
+    .back-button {
+        top: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+    }
+    .console-background {
+        padding-top: 50px; 
+    }
+    .korean-text {
+        font-size: 1rem;
+    }
+}
+
+.korean-text.portuguese-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 1rem; 
+    line-height: 1.5;
+    font-weight: normal; 
+}

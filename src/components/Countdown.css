@@ -1,0 +1,30 @@
+
+
+.time-counter-display {
+    background-color: var(--space-dark);
+    padding: 15px 25px;
+    border: 2px solid var(--tardis-light);
+    border-radius: 5px;
+    font-family: 'Courier New', monospace; 
+    font-size: 1.1rem;
+    color: var(--tardis-light); 
+    box-shadow: 0 0 10px rgba(82, 227, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    margin-right: 15px;
+}
+
+
+@media (max-width: 600px) {
+    .time-counter-display {
+        font-size: 0.9rem; 
+        padding: 10px 15px;
+    }
+    .time-unit {
+        margin: 5px; 
+    }
+}

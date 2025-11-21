@@ -1,0 +1,51 @@
+
+
+
+:root {
+  --tardis-blue: #003a61;
+  --tardis-light: #52e3ff;
+  --galactic-gold: #ffc400;
+  --space-dark: #000a1f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
+}
+
+
+.app-container {
+ 
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  justify-content: flex-start;
+  
+
+  background-color: var(--space-dark); 
+  
+  
+  background-image: url('./assets/tardis-interior.jpg'); 
+  
+  /* Ajustes para a imagem */
+  background-size: cover;
+  background-position: center;
+  
+  color: white;
+  
+  /* CORREÇÃO CRÍTICA: Permite a rolagem vertical quando o conteúdo for maior que a tela */
+  overflow-y: auto; 
+  /* Z-index para garantir que a TARDIS (que tem position: absolute) não fique atrás de nada */
+  position: relative; 
+}
+
+/* NOVO: Ajuste para o padding no topo para o conteúdo não colar na borda,
+   especialmente depois de mudar o justify-content */
+.app-container > * {
+    margin-top: 20px; 
+}
